@@ -44,17 +44,22 @@
             font-family: 'Montserrat', sans-serif;
             color: white;
             transition: opacity 0.5s ease-out;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
         }
 
         .logos-container {
             display: flex;
-            gap: 20px;
-            margin-bottom: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: clamp(15px, 3vw, 25px);
+            margin-bottom: clamp(20px, 4vw, 35px);
         }
 
         .logo-box {
-            width: 40px;
-            height: 40px;
+            width: clamp(40px, 8vw, 50px);
+            height: clamp(40px, 8vw, 50px);
             background-color: white;
             border-radius: 8px;
             opacity: 0.9;
@@ -72,47 +77,50 @@
         }
 
         .presents-text {
-            font-size: 10px;
-            letter-spacing: 6px;
+            font-size: clamp(8px, 1.5vw, 12px);
+            letter-spacing: clamp(3px, 0.5vw, 6px);
             color: #888;
-            margin-bottom: 20px;
+            margin-bottom: clamp(10px, 2.5vw, 20px);
             text-transform: uppercase;
         }
 
         .hackathon-text {
-            font-size: 22px;
+            font-size: clamp(14px, 3.5vw, 26px);
             color: #ffd700;
-            letter-spacing: 2px;
+            letter-spacing: clamp(1px, 0.2vw, 2px);
             font-weight: 700;
-            margin-bottom: 10px;
+            margin-bottom: clamp(8px, 1.5vw, 15px);
             text-transform: uppercase;
+            line-height: 1.3;
         }
 
         .vibeforge-text {
             font-family: 'CasualPassionDemo', sans-serif;
-            font-size: 90px;
+            font-size: clamp(28px, 8vw, 100px);
             font-weight: 900;
             font-style: italic;
             background: linear-gradient(90deg, #ffeb3b 0%, #ff9800 50%, #f44336 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-transform: uppercase;
-            margin-bottom: 30px;
+            margin-bottom: clamp(15px, 4vw, 30px);
             transform: skewX(-5deg);
             filter: drop-shadow(0 0 15px rgba(244, 67, 54, 0.3));
             animation: pulse 2s infinite;
+            line-height: 1.1;
+            white-space: nowrap;
         }
 
         .vibeforge-text .version {
             font-family: 'Orbitron', sans-serif;
-            font-size: 80px;
+            font-size: clamp(24px, 7vw, 85px);
             color: #f44336;
             background: none;
             -webkit-text-fill-color: #f44336;
         }
 
         .red-line {
-            width: 250px;
+            width: clamp(150px, 40vw, 300px);
             height: 2px;
             background: linear-gradient(90deg, transparent, #f44336, transparent);
             margin-top: 10px;
@@ -124,11 +132,14 @@
             100% { filter: drop-shadow(0 0 15px rgba(244, 67, 54, 0.3)); }
         }
 
-        @media (max-width: 768px) {
-            .vibeforge-text { font-size: 50px; }
-            .vibeforge-text .version { font-size: 45px; }
-            .hackathon-text { font-size: 14px; }
-            .presents-text { font-size: 8px; }
+        /* Fallback for extremely small devices */
+        @media (max-width: 380px) {
+            .vibeforge-text {
+                font-size: 26px;
+            }
+            .vibeforge-text .version {
+                font-size: 22px;
+            }
         }
 	</style>
     <!-- Libs and GDJS core files : -->
